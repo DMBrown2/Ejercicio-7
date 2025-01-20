@@ -7,29 +7,24 @@ console.log(numeroAleatorio)
 
 let intentos = 5
 
-alert(`Adiviná el número entre 1 y 50. Tenes 5 intentos.`)
-let numeroIngresado
+alert("¡Bienvenido al juego de adivinar el número! Intenta adivinar un número entre 1 y 50.")
 
-    while(intentos > 0) {
 
-        numeroIngresado = parseInt(prompt(`Ingresá un número.`))
+while (intentos > 0) {
+        let respuestaUsuario = parseInt(prompt(`Te quedan ${intentos} intentos. Ingresa tu respuesta:`))
 
-        if(isNaN(numeroIngresado) || numeroIngresado > 50 || numeroIngresado < 1) {
-            parseInt(prompt(`El número ingresado no es válido. Ingresá un número entre 1 y 50.`))
+        if(isNaN(respuestaUsuario) || respuestaUsuario > 50 || respuestaUsuario < 1) {
+       alert(`El número ingresado no es válido. Por favor, ingresa un número entre 1 y 50.`)
             continue
         } 
 
-        if(numeroIngresado === numeroAleatorio) {
+        if(respuestaUsuario === numeroAleatorio) {
             alert(`Felicidades! Adivinaste el número!`) 
             break
-        } 
-        
-        else if(numeroIngresado > numeroAleatorio) {
-            parseInt(prompt(`El número que ingresaste es más alto, ingresá uno más bajo. Te quedan ${intentos} intentos.`))
-        } 
-        
-        else {
-            parseInt(prompt(`El número que ingresaste es más bajo, ingresá uno más alto. Te quedan ${intentos} intentos.`))
+        } else if(respuestaUsuario > numeroAleatorio) {
+            alert(`El número es más bajo que ${respuestaUsuario}.`)
+        } else {
+            alert(`El número es más alto que ${respuestaUsuario}.`)
          }
 
          intentos--
